@@ -12,6 +12,7 @@ project:
     - title: Foundations
       children:
         - file: chapters/01_workflow.md
+        - file: chapters/02_grid_krr_three_gaussians_1d.ipynb
 
 site:
   template: book-theme
