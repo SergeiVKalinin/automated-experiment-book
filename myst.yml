@@ -1,0 +1,15 @@
+version: 1
+
+project:
+  title: The Art of Automated Experiment
+  description: A readable computational book with figures, notebooks, and links to code.
+  authors:
+    - name: Sergei V. Kalinin
+  github: https://github.com/SergeiVKalinin/automated-experiment-book
+
+  toc:
+    - file: intro.md
+
+site:
+  template: book-theme
+  title: Automated Experiment
