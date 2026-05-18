@@ -9,6 +9,9 @@ project:
 
   toc:
     - file: intro.md
+    - title: Foundations
+      children:
+        - file: chapters/01_workflow.md
 
 site:
   template: book-theme
