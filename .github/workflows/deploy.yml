@@ -42,10 +42,41 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Add hide-input tags to notebook code cells
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          notebook_paths = list(Path("chapters").glob("*.ipynb"))
+
+          for path in notebook_paths:
+              nb = json.loads(path.read_text(encoding="utf-8"))
+
+              changed = False
+              for cell in nb.get("cells", []):
+                  if cell.get("cell_type") == "code":
+                      metadata = cell.setdefault("metadata", {})
+                      tags = metadata.setdefault("tags", [])
+
+                      if "hide-input" not in tags:
+                          tags.append("hide-input")
+                          changed = True
+
+                  # Keep links/title markdown cells untouched.
+
+              if changed:
+                  path.write_text(
+                      json.dumps(nb, indent=1, ensure_ascii=False),
+                      encoding="utf-8",
+                  )
+                  print(f"Added hide-input tags to {path}")
+          PY
+
       - name: Build static HTML
         run: |
           jupyter book build --html
-
+          
       - name: Add .nojekyll
         run: |
           touch _build/html/.nojekyll
