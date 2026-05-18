@@ -1,0 +1,47 @@
+<svg width="1000" height="420" viewBox="0 0 1000 420" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="420" fill="white"/>
+
+  <style>
+    .box { fill: #f4f6f8; stroke: #1f2937; stroke-width: 2; rx: 18; }
+    .title { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #111827; }
+    .text { font-family: Arial, sans-serif; font-size: 18px; fill: #374151; }
+    .arrow { stroke: #111827; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+    .small { font-family: Arial, sans-serif; font-size: 15px; fill: #4b5563; }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#111827"/>
+    </marker>
+  </defs>
+
+  <rect x="50" y="130" width="190" height="120" class="box"/>
+  <text x="145" y="165" text-anchor="middle" class="title">Human</text>
+  <text x="145" y="195" text-anchor="middle" class="text">Scientific goal</text>
+  <text x="145" y="220" text-anchor="middle" class="small">What should be learned?</text>
+
+  <rect x="300" y="130" width="190" height="120" class="box"/>
+  <text x="395" y="165" text-anchor="middle" class="title">Algorithm</text>
+  <text x="395" y="195" text-anchor="middle" class="text">Policy / optimizer</text>
+  <text x="395" y="220" text-anchor="middle" class="small">What to measure next?</text>
+
+  <rect x="550" y="130" width="190" height="120" class="box"/>
+  <text x="645" y="165" text-anchor="middle" class="title">Instrument</text>
+  <text x="645" y="195" text-anchor="middle" class="text">Experiment action</text>
+  <text x="645" y="220" text-anchor="middle" class="small">Acquire data</text>
+
+  <rect x="800" y="130" width="150" height="120" class="box"/>
+  <text x="875" y="165" text-anchor="middle" class="title">Data</text>
+  <text x="875" y="195" text-anchor="middle" class="text">Observation</text>
+  <text x="875" y="220" text-anchor="middle" class="small">Reward / evidence</text>
+
+  <path d="M240 190 L300 190" class="arrow"/>
+  <path d="M490 190 L550 190" class="arrow"/>
+  <path d="M740 190 L800 190" class="arrow"/>
+
+  <path d="M875 250 C875 340, 395 340, 395 250" class="arrow"/>
+  <text x="620" y="370" text-anchor="middle" class="text">feedback: update model, belief, and next action</text>
+
+  <rect x="300" y="30" width="440" height="55" fill="#eef2ff" stroke="#3730a3" stroke-width="2" rx="15"/>
+  <text x="520" y="65" text-anchor="middle" class="text">Digital twin: reusable knowledge about instrument, noise, and constraints</text>
+</svg>
